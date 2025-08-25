@@ -1,5 +1,8 @@
 # Dockerfile
-FROM tomcat:9.0-jdk17-temurin
-# Copy the built WAR into Tomcat as ROOT.war (served at /)
-ARG WAR_FILE=target/*.war
-COPY ${WAR_FILE} /usr/local/tomcat/webapps/ROOT.war
+FROM eclipse-temurin:17-jre
+WORKDIR /app
+# Copy the built jar from Maven target folder
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+# Runs the jar (for CLI apps this will run and exit; that’s fine for a demo)
+ENTRYPOINT ["java","-jar","/app/app.jar"]
