@@ -5,7 +5,7 @@ package com.mycompany.app;
  */
 public class App {
 
-    private static final String MESSAGE = "Deploy Jar in Docker";
+    private static final String MESSAGE = "Java application running under Docker Container";
 
     public App() {}
 
