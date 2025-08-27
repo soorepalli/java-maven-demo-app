@@ -20,6 +20,6 @@ public class AppTest
     public void testAppMessage()
     {
         App app = new App();
-        assertEquals("Deploy Jar in Docker", app.getMessage());
+        assertEquals("Java application running under Docker Container", app.getMessage());
     }
 }
